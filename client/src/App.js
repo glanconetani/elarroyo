@@ -35,32 +35,30 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <main>
-          <Container className="m-5">
-            <Row className="justify-content-center">
-              <Col md="6">
-                <Form onSubmit={this.diffSigns}>
-                  <FormGroup>
-                    <Label>Previous</Label>
-                    <Input name="previous" placeholder="Previous Sign" onChange={this.handleChange} required/>
-                  </FormGroup>
-                  <FormGroup>
-                    <Label>Next</Label>
-                    <Input name="next" placeholder="Next Sign" onChange={this.handleChange} required/>
-                  </FormGroup>
-                  <Button type="submit">Diff Signs</Button>
-                </Form>
+        <Container fluid className="mt-4">
+          <Row className="justify-content-center mx-2">
+            <Col md="6" sm="12">
+              <Form onSubmit={this.diffSigns}>
+                <FormGroup>
+                  <Label>Previous</Label>
+                  <Input name="previous" placeholder="Previous Sign" onChange={this.handleChange} required/>
+                </FormGroup>
+                <FormGroup>
+                  <Label>Next</Label>
+                  <Input name="next" placeholder="Next Sign" onChange={this.handleChange} required/>
+                </FormGroup>
+                <Button type="submit">Diff Signs</Button>
+              </Form>
 
-              </Col>
-            </Row>
-            <Row className="justify-content-center mt-3">
-              <Col md="6">
-                <p>Pull: {this.state.pull}</p>
-                <p>Remove: {this.state.remove}</p>
-              </Col>
-            </Row>
-          </Container>
-        </main>
+            </Col>
+          </Row>
+          <Row className="justify-content-center mt-4 mx-2">
+            <Col md="6" sm="12">
+              <p>Pull: {this.state.pull}</p>
+              <p>Remove: {this.state.remove}</p>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
